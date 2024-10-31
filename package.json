@@ -2,15 +2,22 @@
   "name": "fari-directus-parser",
   "version": "1.0.2",
   "description": "A parser for Directus data.",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FARI-brussels/fari-directus-parser.git"
+  },
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.cjs"
     }
   },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
@@ -26,10 +33,7 @@
   ],
   "author": "Mosa",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FARI-brussels/fari-directus-parser.git"
-  },
+
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/jest": "^29.5.14",
