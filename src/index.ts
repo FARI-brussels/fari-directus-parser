@@ -4,7 +4,7 @@ import { parseDirectusItem } from "./parsers";
 
 const client = createDirectus("https://fari-cms.directus.app").with(rest());
 
-export const fetchDirectus = async <T extends ParsedItem = ParsedItem>(
+const fetchDirectus = async <T extends ParsedItem = ParsedItem>(
   { id, slug }: ValidDirectusParams,
   parser: (data: DirectusItem) => T = parseDirectusItem as (
     data: DirectusItem,
@@ -57,3 +57,9 @@ const fetchBySlug = async (slug: string): Promise<DirectusItem | null> => {
     return null;
   }
 };
+
+export {
+  fetchDirectus,
+  fetchById,
+  fetchBySlug
+}
