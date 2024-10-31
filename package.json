@@ -1,6 +1,6 @@
 {
   "name": "fari-directus-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A parser for Directus data.",
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   "files": [
     "dist"
   ],
-
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
@@ -33,7 +32,6 @@
   ],
   "author": "Mosa",
   "license": "ISC",
-
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/jest": "^29.5.14",
