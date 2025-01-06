@@ -25,7 +25,7 @@ export interface DirectusItem {
   }>;
 }
 
-export interface ParsedItem {
+export interface DirectusParsedItem {
   image: string | null;
   video: string | null;
   title: Record<string, string>;

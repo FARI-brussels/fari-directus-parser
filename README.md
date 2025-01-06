@@ -20,9 +20,9 @@ You can also create your own parser and pass as a second argument:
 ```
 import { fetchDirectus } from 'fari-directus-parser'
 
-const demoId = 1
+const id = 1
 
-function myParser(myArgs){
+function myParser(apiresponsedata){
   // some parser function
 }
 
