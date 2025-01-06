@@ -1,6 +1,6 @@
 {
   "name": "fari-directus-parser",
-  "version": "1.0.6",
+  "version": "1.0.61",
   "description": "A parser for Directus data.",
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
       "import": "./dist/index.js"
     }
   },
+  "types": "./dist/types/index.d.ts",
   "main": "dist/index.js",
   "files": [
     "dist"

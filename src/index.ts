@@ -1,10 +1,10 @@
 import { createDirectus, rest, readItems, readItem } from "@directus/sdk";
-import { ValidDirectusParams, DirectusItem, ParsedItem } from "./types";
+import { ValidDirectusParams, DirectusItem, DirectusParsedItem } from "./types";
 import { parseDirectusItem } from "./parsers";
 
 const client = createDirectus("https://fari-cms.directus.app").with(rest());
 
-const fetchDirectus = async <T extends ParsedItem = ParsedItem>(
+const fetchDirectus = async <T extends DirectusParsedItem = DirectusParsedItem>(
   { id, slug }: ValidDirectusParams,
   parser: (data: DirectusItem) => T = parseDirectusItem as (
     data: DirectusItem,
@@ -29,8 +29,9 @@ const fetchDirectus = async <T extends ParsedItem = ParsedItem>(
   }
 };
 
-const fetchById = async (id: number): Promise<DirectusItem | null> => {
+const fetchById = async (id: number | string): Promise<DirectusItem | null> => {
   try {
+    if(typeof id === 'string') id = parseInt(id)
     const response = await client.request(
       readItem("demos", id, { fields: ["*.*"] }),
     );
