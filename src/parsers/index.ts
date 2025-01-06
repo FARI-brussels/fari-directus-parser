@@ -1,6 +1,6 @@
-import { DirectusItem, ParsedItem } from "../types";
+import { DirectusItem, DirectusParsedItem } from "../types";
 
-export const parseDirectusItem = (data: DirectusItem): ParsedItem => {
+export const parseDirectusItem = (data: DirectusItem): DirectusParsedItem => {
   const {
     image,
     video,
