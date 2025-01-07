@@ -1,6 +1,6 @@
 import { createDirectus, rest, readItems, readItem } from "@directus/sdk";
 import { ValidDirectusParams, DirectusItem, DirectusParsedItem } from "./types";
-import { parseDirectusItem } from "./parsers/index";
+import { parseDirectusItem } from "./parsers";
 
 const client = createDirectus("https://fari-cms.directus.app").with(rest());
 
