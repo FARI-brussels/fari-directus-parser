@@ -22,6 +22,7 @@ export interface DirectusItem {
     title: string;
     topic: string;
     description: string;
+    app_url?: string;
   }>;
 }
 
@@ -35,4 +36,5 @@ export interface DirectusParsedItem {
   research_lead: string;
   logos: string[] | null;
   sdg_images: string[] | null;
+  app_url?: string;
 }

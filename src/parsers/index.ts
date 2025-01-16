@@ -21,6 +21,7 @@ export const parseDirectusItem = (data: DirectusItem): DirectusParsedItem => {
     topic: parseTranslations(translations, "topic"),
     logos: parseMediaFiles(logos),
     sdg_images: parseMediaFiles(sdg_images),
+    app_url: getAppUrl(translations)
   };
 };
 
@@ -38,7 +39,7 @@ export const parseMediaFiles = (
 
 export const parseTranslations = (
   translations: Array<{ languages_code: string; [key: string]: string }>,
-  field: "title" | "description" | "topic",
+  field: "title" | "description" | "topic" | "app_url",
 ): Record<string, string> =>
   translations.reduce(
     (acc, translation) => {
@@ -46,4 +47,15 @@ export const parseTranslations = (
       return acc;
     },
     {} as Record<string, string>,
+  );
+
+export const getAppUrl = (
+  translations: Array<{ languages_code: string; [key: string]: string }>
+): string =>
+  translations.reduce(
+    (acc, translation) => {
+      acc[translation.languages_code] = translation['app_url'];
+      return acc;
+    },
+    {} as string,
   );
